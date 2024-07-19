@@ -1,0 +1,40 @@
+<div class="mt-8">
+    <input type="text" placeholder="Search" [(ngModel)]="searchTerm" class="mb-4 mr-3 px-4 py-2 border rounded"/>
+    <select [(ngModel)]="filterType" class="mb-4 px-4 py-2.5 border rounded">
+      <option value="">Filter by Workout Type</option>
+      <option value="All">All</option>
+      <option value="Running">Running</option>
+      <option value="Cycling">Cycling</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Yoga">Yoga</option>
+    </select>
+  
+    <table class="w-full border-collapse border border-gray-300">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border border-gray-300 px-4 py-2">Name</th>
+          <th class="border border-gray-300 px-4 py-2">Workouts</th>
+          <th class="border border-gray-300 px-4 py-2">Number of Workouts</th>
+          <th class="border border-gray-300 px-4 py-2">Total Workout Minutes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let workout of aggregatedWorkouts  | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+          <td class="border border-gray-300 px-4 py-2">{{ workout.name }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ workout.types }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ getWorkoutCount(workout.name) }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ getTotalWorkoutMinutes(workout.name) }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls
+    class="flex justify-center mt-4"
+    (pageChange)="page = $event"
+    [previousLabel]="'Previous'"
+    [nextLabel]="'Next'"
+    [directionLinks]="true"
+    [autoHide]="true"
+    >
+  </pagination-controls>
+  </div>
+  
