@@ -1,0 +1,7 @@
+<div class="h-screen w-full flex flex-row justify-start items-start">
+  <div class=" p-16">
+    <app-form (workoutAdded)="onWorkoutAdded($event)"></app-form>
+    <app-workout-list [workouts]="workouts"></app-workout-list>
+  </div>
+</div>
+<router-outlet></router-outlet>
