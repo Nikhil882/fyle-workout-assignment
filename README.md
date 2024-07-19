@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+## Code Coverage Report
+
+After running the tests with `ng test --code-coverage`, the code coverage report will be generated in the `coverage` directory. 
+
+To view the detailed report, open the `coverage/index.html` file in your browser. The report will provide insights into the coverage of your project's components and services, including which lines of code are covered by tests and which are not.
+
+=============================== Coverage summary ===============================
+Statements   : 78% ( 39/50 )
+Branches     : 43.75% ( 7/16 )
+Functions    : 56.25% ( 9/16 )
+Lines        : 77.77% ( 35/45 )
+================================================================================
