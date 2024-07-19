@@ -1,4 +1,5 @@
 <div class="h-screen w-full flex flex-row justify-start items-start">
+  <h1 class="hidden">{{title}}</h1>
   <div class=" p-16">
     <app-form (workoutAdded)="onWorkoutAdded($event)"></app-form>
     <app-workout-list [workouts]="workouts"></app-workout-list>
